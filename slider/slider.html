@@ -1,0 +1,154 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <style>
+        body {
+  background: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.title {
+  margin-top: 32px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 27px;
+  color: #aaa;
+}
+
+.slider {
+  display: flex;
+  height: auto;
+  margin: auto;
+  overflow: hidden;
+  align-items: center;
+  width: 100%; /* Ancho del slider ajustado */
+}
+
+.slider:before {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  content: "";
+  width: 23.958%;
+  height: 110px;
+  background: linear-gradient(-90deg, hsla(0, 0%, 96.9%, 0), #f7f7f7);
+}
+
+.slider:after {
+  position: absolute;
+  right: 0;
+  content: "";
+  width: 23.958%;
+  height: 110px;
+  background: linear-gradient(
+    90deg,
+    hsla(0, 0%, 96.9%, 0),
+    hsla(0, 0%, 96.9%, 0.99) 99%
+  );
+}
+
+.slider .slide-track {
+  display: flex;
+  animation: scroll 35s linear infinite;
+  -webkit-animation: scroll 35s linear infinite;
+  width: calc(240px * 22);
+  scroll-behavior: smooth;
+}
+.slider .slide {
+  width: 60px; /* Ancho del contenedor del slide */
+  height: auto;
+  padding: 10px;
+  margin: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Añadir overflow: hidden para recortar las imágenes grandes */
+}
+
+.slider .slide img {
+  height: auto; /* Cambiar a 100% para llenar el contenedor */
+  max-width: 100%; /* Cambiar a 100% para llenar el contenedor */
+  object-fit: contain; /* Asegura que la imagen se ajuste manteniendo su relación de aspecto */
+  
+  opacity: 1;
+}
+
+@keyframes scroll {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(calc(-240px * 5));
+    transform: translateX(calc(-240px * 5));
+  }
+}
+    </style>
+</head>
+<body>
+
+    <div class="slider">
+        <div class="slide-track">
+          <div class="slide"><img src="img1.jpg" alt="">
+          </div>
+          <div class="slide"><img src="img2.jpg" alt="">
+          </div>
+          <div class="slide"><img src="img3.png" alt="">
+          </div>
+          <div class="slide"><img src="img4.png" alt="">
+          </div>
+          <div class="slide"><img src="img5.png" alt="">
+          </div>
+    
+          <div class="slide"><img src="img6.png" alt="">
+          </div>
+          <div class="slide"><img src="img7.png" alt="">
+          </div>
+          <div class="slide"><img src="img8.png" alt="">
+          </div>
+          <div class="slide"><img src="img9.png" alt="">
+          </div>
+          <div class="slide"><img src="img10.jpg" alt="">
+          </div>
+          <div class="slide"><img src="img11.jpg" alt="">
+          </div>
+          
+          <div class="slide"><img src="img1.jpg" alt="">
+          </div>
+          <div class="slide"><img src="img2.jpg" alt="">
+          </div>
+          <div class="slide"><img src="img3.png" alt="">
+          </div>
+          <div class="slide"><img src="img4.png" alt="">
+          </div>
+          <div class="slide"><img src="img5.png" alt="">
+          </div>
+    
+          <div class="slide"><img src="img6.png" alt="">
+          </div>
+          <div class="slide"><img src="img7.png" alt="">
+          </div>
+          <div class="slide"><img src="img8.png" alt="">
+          </div>
+          <div class="slide"><img src="img9.png" alt="">
+          </div>
+          <div class="slide"><img src="img10.jpg" alt="">
+          </div>
+          <div class="slide"><img src="img11.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    
+      <div class="title">Nuestros Colaboradores y Patrocinadores</div>
+
+    
+</body>
+</html>
